@@ -3,7 +3,7 @@
 # Echo GraalVM
 
 A simple Telegram bot that echoes messages back to the user.
-The objective is to experiment with GraalVM and generate native-images from a Clojure application.
+The objective is to experiment with GraalVM while generating native-images from a Clojure application.
 
 ## Usage
 
