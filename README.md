@@ -1,3 +1,5 @@
+![Compatible with GraalVM](https://img.shields.io/badge/compatible_with-GraalVM-green)
+
 # Echo GraalVM
 
 A simple Telegram bot that echoes messages back to the user.
