@@ -1,0 +1,2 @@
+{:prod {:service-name   "echo-bot"
+        :telegram-token "<telegram bot token>"}}
