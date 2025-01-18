@@ -1,5 +1,8 @@
 (ns echo-graalvm.components
-  (:require [common-clj.integrant-components.config :as component.config]
+  (:require [clojure.tools.logging :as log]
+            [common-clj.integrant-components.config :as component.config]
+            [http-client-component.core :as component.http-client]
+            [echo-graalvm.telegram-consumer :as component.telegram-consumer]
             [integrant.core :as ig]
             [taoensso.timbre :as timbre]
             [taoensso.timbre.tools.logging])
@@ -8,8 +11,12 @@
 (taoensso.timbre.tools.logging/use-timbre)
 
 (def config
-  {::component.config/config {:path "resources/config.edn"
-                              :env  :prod}})
+  {::component.config/config                       {:path "resources/config.edn"
+                                                    :env  :prod}
+   ::component.http-client/http-client             {:components {:config (ig/ref ::component.config/config)}}
+   ::component.telegram-consumer/telegram-consumer {:main-handler-fn (fn [update] (log/info ::update update))
+                                                    :components      {:config      (ig/ref ::component.config/config)
+                                                                      :http-client (ig/ref ::component.http-client/http-client)}}})
 
 (defn start-system! []
   (timbre/set-min-level! :debug)

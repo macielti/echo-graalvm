@@ -1,14 +1,15 @@
-# echo-graalvm
+# Echo GraalVM
 
-A Clojure library designed to ... well, that part is up to you.
+A simple Telegram bot that echoes messages back to the user.
+The objective is to experiment with GraalVM and generate native-images from a Clojure application.
 
 ## Usage
 
-FIXME
+TODO: Write usage instructions
 
 ## License
 
-Copyright © 2025 FIXME
+Copyright © 2025 Bruno do Nascimento Maciel
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at

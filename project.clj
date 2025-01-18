@@ -10,6 +10,8 @@
   :dependencies [[org.clojure/clojure "1.12.0"]
 
                  [net.clojars.macielti/common-clj "42.74.74"]
+                 [net.clojars.macielti/http-client-component "1.1.0"]
+                 [net.clojars.macielti/service-component "2.4.2"]
 
                  [com.taoensso/timbre "6.6.1"]
 
@@ -39,6 +41,9 @@
                                                   "--report-unsupported-elements-at-runtime"
 
                                                   "--initialize-at-build-time"
+
+                                                  ;;prometheus
+                                                  "--initialize-at-run-time=io.prometheus.client.Striped64"
 
                                                   "--features=clj_easy.graal_build_time.InitClojureClasses"
                                                   "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
