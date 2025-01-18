@@ -2,9 +2,9 @@
   (:require [cheshire.core :as json]
             [clojure.tools.logging :as log]
             [http-client-component.core :as component.http-client]
-            [service-component.error :as service.error]
             [integrant.core :as ig]
-            [schema.core :as s]))
+            [schema.core :as s]
+            [service-component.error :as service.error]))
 
 (s/defn diplomat-fetch-updates!
   [offset :- (s/maybe s/Int)

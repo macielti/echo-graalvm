@@ -1,8 +1,8 @@
 (ns echo-graalvm.components
   (:require [clojure.tools.logging :as log]
             [common-clj.integrant-components.config :as component.config]
-            [http-client-component.core :as component.http-client]
             [echo-graalvm.telegram-consumer :as component.telegram-consumer]
+            [http-client-component.core :as component.http-client]
             [integrant.core :as ig]
             [taoensso.timbre :as timbre]
             [taoensso.timbre.tools.logging])

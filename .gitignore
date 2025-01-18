@@ -14,3 +14,6 @@ pom.xml.asc
 /echo-graalvm.iml
 /.idea/
 /resources/config.edn
+/.clj-kondo/.cache/
+/.clj-kondo/imports/
+/.lsp/.cache/
