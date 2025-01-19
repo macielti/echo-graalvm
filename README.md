@@ -9,6 +9,8 @@ The objective is to experiment with GraalVM while generating native-images from 
 
 ## Usage
 
+Local deploy - `linux/amd64`
+
 1. Clone the repository
 2. Rename the file `resources/config.edn.example` to `resources/config.edn`.
 3. Fill the `resources/config.edn` file with your Telegram bot token.
