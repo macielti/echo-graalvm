@@ -5,9 +5,14 @@
 A simple Telegram bot that echoes messages back to the user.
 The objective is to experiment with GraalVM while generating native-images from a Clojure application.
 
+**Echoes only text messages**
+
 ## Usage
 
-TODO: Write usage instructions
+1. Clone the repository
+2. Rename the file `resources/config.edn.example` to `resources/config.edn`.
+3. Fill the `resources/config.edn` file with your Telegram bot token.
+4. Run the docker container: `docker compose up -d`
 
 ## License
 
