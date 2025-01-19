@@ -1,4 +1,4 @@
-name: Docker Image - AMD
+name: Docker Image - ARM
 
 on:
   push:
@@ -15,6 +15,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install dependencies
+        run: docker ps
 
       - name: Docker meta
         id: meta
