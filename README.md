@@ -16,6 +16,14 @@ Local deploy - `linux/amd64`
 3. Fill the `resources/config.edn` file with your Telegram bot token.
 4. Run the docker container: `docker compose up -d`
 
+## Experiment Results
+
+A simple Clojure application (a Telegram echo bot) deployed to a Docker container consuming less than 10 MiB of RAM.
+
+`docker stats` output:
+
+![Docker Stats](doc/docker-stats.png)
+
 ## License
 
 Copyright © 2025 Bruno do Nascimento Maciel
