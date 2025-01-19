@@ -1,6 +1,6 @@
 services:
   echo-graalvm:
-    image: ghcr.io/macielti/echo-graalvm:sha-2da2c33-linux-amd64
+    image: ghcr.io/macielti/echo-graalvm:main
     container_name: echo-graalvm
     restart: always
     volumes:
