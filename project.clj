@@ -13,6 +13,7 @@
                  [net.clojars.macielti/http-client-component "1.1.0"]
                  [net.clojars.macielti/service-component "2.4.2"]
 
+                 [morse "0.4.3"]
                  [com.taoensso/timbre "6.6.1"]
 
                  [com.github.clj-easy/graal-build-time "1.0.5"]]

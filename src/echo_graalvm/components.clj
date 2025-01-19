@@ -2,6 +2,7 @@
   (:require [clojure.tools.logging :as log]
             [common-clj.integrant-components.config :as component.config]
             [echo-graalvm.telegram-consumer :as component.telegram-consumer]
+            [echo-graalvm.diplomat.telegram.consumer :as diplomat.telegram.consumer]
             [http-client-component.core :as component.http-client]
             [integrant.core :as ig]
             [taoensso.timbre :as timbre]
@@ -14,7 +15,7 @@
   {::component.config/config                       {:path "resources/config.edn"
                                                     :env  :prod}
    ::component.http-client/http-client             {:components {:config (ig/ref ::component.config/config)}}
-   ::component.telegram-consumer/telegram-consumer {:main-handler-fn (fn [update] (log/info ::update update))
+   ::component.telegram-consumer/telegram-consumer {:main-handler-fn diplomat.telegram.consumer/main-handler-fn!
                                                     :components      {:config      (ig/ref ::component.config/config)
                                                                       :http-client (ig/ref ::component.http-client/http-client)}}})
 
