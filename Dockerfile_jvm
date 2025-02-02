@@ -1,0 +1,21 @@
+FROM clojure as buildStage
+
+LABEL stage="builder"
+
+COPY . /usr/src/app
+
+WORKDIR /usr/src/app
+
+RUN apt-get -y update
+
+RUN lein deps
+
+RUN lein uberjar
+
+FROM amazoncorretto:23
+
+WORKDIR /app
+
+COPY --from=buildStage /usr/src/app/target/echo-graalvm-0.1.0-SNAPSHOT-standalone.jar  /app/echo-graalvm.jar
+
+CMD ["java", "-jar", "echo-graalvm.jar"]

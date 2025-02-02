@@ -9,7 +9,7 @@ The objective is to experiment with GraalVM while generating native-images from 
 
 ## Usage
 
-Local deploy - `linux/amd64`
+Local deployment:
 
 1. Clone the repository
 2. Rename the file `resources/config.edn.example` to `resources/config.edn`.
@@ -19,6 +19,12 @@ Local deploy - `linux/amd64`
 ## Experiment Results
 
 A simple Clojure application (a Telegram echo bot) deployed to a Docker container consuming less than 10 MiB of RAM.
+
+To ensure a fairer comparison, I implemented 3 versions of Docker images:
+
+- **echo-graalvm-distroless**: The version that uses `gcr.io/distroless/base:latest` as the base image.
+- **echo-jvm**: The JVM-based version using `amazoncorretto:23` as the base image.
+- **echo-graalvm**: The GraalVM-based version, also using `amazoncorretto:23` as the base image.
 
 `docker stats` output:
 

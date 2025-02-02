@@ -1,11 +1,26 @@
 services:
+  echo-graalvm-distroless:
+    build:
+      context: .
+      dockerfile: Dockerfile_graalvm_distroless
+    container_name: echo-graalvm-distroless
+    volumes:
+      - ./resources/config.edn:/app/resources/config.edn
+
   echo-graalvm:
-    image: ghcr.io/macielti/echo-graalvm:main
+    build:
+      context: .
+      dockerfile: Dockerfile_graalvm
     container_name: echo-graalvm
     restart: always
     volumes:
       - ./resources/config.edn:/app/resources/config.edn
-    deploy:
-      resources:
-        limits:
-          memory: "25MB"
+
+  echo-jvm:
+    build:
+      context: .
+      dockerfile: Dockerfile_jvm
+    container_name: echo-jvm
+    restart: always
+    volumes:
+      - ./resources/config.edn:/app/resources/config.edn
