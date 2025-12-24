@@ -39,6 +39,8 @@
 
                                                   "--initialize-at-build-time"
 
+                                                  "--trace-object-instantiation=java.util.Random"
+
                                                   "--features=clj_easy.graal_build_time.InitClojureClasses"
                                                   "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
                                                   "-H:+UnlockExperimentalVMOptions"
