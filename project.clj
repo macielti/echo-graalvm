@@ -43,6 +43,7 @@
                                                   "--initialize-at-run-time=io.prometheus.client.Striped64"
 
                                                   "--features=clj_easy.graal_build_time.InitClojureClasses"
+                                                  "-Dio.pedestal.log.defaultMetricsRecorder=nil"
                                                   "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
                                                   "-H:+UnlockExperimentalVMOptions"
                                                   "-H:+StaticExecutableWithDynamicLibC"
