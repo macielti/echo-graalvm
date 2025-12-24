@@ -41,6 +41,8 @@
 
                                                   "--trace-object-instantiation=java.util.Random"
 
+                                                  "--initialize-at-build-time=com.sun.jmx.mbeanserver.JmxMBeanServer"
+
                                                   "--features=clj_easy.graal_build_time.InitClojureClasses"
                                                   "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
                                                   "-H:+UnlockExperimentalVMOptions"
