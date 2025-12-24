@@ -10,7 +10,6 @@
   :dependencies [[org.clojure/clojure "1.12.4"]
                  [net.clojars.macielti/http-client-component "1.2.1"]
                  [net.clojars.macielti/telegrama "0.2.0"]
-                 [io.pedestal/pedestal.interceptor "0.6.5"]
                  [com.taoensso/timbre "6.8.0"]
                  [com.github.clj-easy/graal-build-time "1.0.5"]]
 
