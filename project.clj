@@ -39,7 +39,8 @@
 
                                                   "--initialize-at-build-time"
 
-                                                  "--trace-object-instantiation=com.sun.jmx.mbeanserver.JmxMBeanServer"
+                                                  ;;prometheus
+                                                  "--initialize-at-run-time=io.prometheus.client.Striped64"
 
                                                   "--features=clj_easy.graal_build_time.InitClojureClasses"
                                                   "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
