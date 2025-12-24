@@ -1,18 +1,18 @@
 (ns echo-graalvm.diplomat.telegram.consumer
-  (:require [echo-graalvm.telegram-consumer :as component.telegram-consumer]
-            [schema.core :as s]))
+  (:require [telegrama.api :as api]))
 
-(s/defn echo-message!
-  [message :- s/Str
-   chat-id
-   {:keys [telegram-token]}
-   http-client]
-  (component.telegram-consumer/send-text! telegram-token chat-id (str "Echoing: " message) http-client))
+(defn handle-test!
+  [{:keys [event components]}]
+  (let [token (-> components :config :telegram :token)
+        chat-id (-> event :identification :id)]
+    (api/send-text! token chat-id "Tested!" (:http-client components))))
 
-(defn main-handler-fn!
-  [update
-   components]
-  (echo-message! (-> update :message :text)
-                 (-> update :message :chat :id)
-                 (:config components)
-                 (:http-client components)))
+(defn handle-chat-id!
+  [{:keys [event components]}]
+  (let [token (-> components :config :telegram :token)
+        chat-id (-> event :identification :id)
+        message (str "Your chat-id is: " chat-id)]
+    (api/send-text! token chat-id message (:http-client components))))
+
+(def settings {:bot-command {:test    {:handler handle-test!}
+                             :chat-id {:handler handle-chat-id!}}})

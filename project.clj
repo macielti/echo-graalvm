@@ -7,20 +7,15 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
 
-  :dependencies [[org.clojure/clojure "1.12.0"]
-
-                 [net.clojars.macielti/common-clj "42.74.74"]
-                 [net.clojars.macielti/http-client-component "1.1.0"]
-                 [net.clojars.macielti/service-component "2.4.2"]
-
-                 [morse "0.4.3"]
-                 [com.taoensso/timbre "6.6.1"]
-
+  :dependencies [[org.clojure/clojure "1.12.4"]
+                 [net.clojars.macielti/http-client-component "1.2.1"]
+                 [net.clojars.macielti/telegrama "0.2.0"]
+                 [com.taoensso/timbre "6.8.0"]
                  [com.github.clj-easy/graal-build-time "1.0.5"]]
 
   :profiles {:dev {:plugins      [[lein-shell "0.5.0"]
                                   [com.github.liquidz/antq "RELEASE"]
-                                  [com.github.clojure-lsp/lein-clojure-lsp "1.4.15"]]
+                                  [com.github.clojure-lsp/lein-clojure-lsp "2.0.13"]]
 
                    :dependencies [[hashp "0.2.2"]]
 

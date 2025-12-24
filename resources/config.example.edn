@@ -1,2 +1,2 @@
-{:prod {:service-name   "echo-bot"
-        :telegram-token "<telegram bot token>"}}
+{:prod {:telegram {:token                 "<telegram-bot-token>"
+                   :poll-interval-seconds 1}}}
